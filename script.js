@@ -25,3 +25,10 @@ fetchCatBreeds().then((data) => console.log("Breeds data:", data));
 function getSelectedFactCount() {
 	return document.getElementById("factCount").value;
 }
+
+
+async function displayCatFacts() {
+	const count = getSelectedFactCount();
+	const container = document.getElementById("factsContainer");
+	container.innerHTML = "<p>Loading facts...</p>";
+}
