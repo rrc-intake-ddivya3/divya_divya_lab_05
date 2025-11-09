@@ -45,3 +45,13 @@ async function displayCatFacts() {
 	}
 }
 
+const samuraiPizzaCats = {
+	leader: "Speedy Cerviche",
+	members: 3,
+	base: {
+		location: "Little Tokyo",
+		name: "Pizza Cat Restaurant",
+	},
+	catchphrase: "It's cheese time!",
+};
+
