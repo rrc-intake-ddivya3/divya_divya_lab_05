@@ -55,3 +55,7 @@ const samuraiPizzaCats = {
 	catchphrase: "It's cheese time!",
 };
 
+const { leader, base: { location } } = samuraiPizzaCats;
+console.log("Leader:", leader);
+console.log("Base location:", location);
+
