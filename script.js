@@ -26,9 +26,22 @@ function getSelectedFactCount() {
 	return document.getElementById("factCount").value;
 }
 
-
+// display the facts
 async function displayCatFacts() {
 	const count = getSelectedFactCount();
 	const container = document.getElementById("factsContainer");
 	container.innerHTML = "<p>Loading facts...</p>";
+
+    try {
+		const response = await fetch(`https://catfact.ninja/facts?limit=${count}`);
+		if (!response.ok) throw new Error("Network error");
+		const data = await response.json();
+
+		container.innerHTML = data.data
+			.map((factObj) => `<div class="fact">${factObj.fact}</div>`)
+			.join("");
+	} catch (error) {
+		container.innerHTML = `<p style="color:red;">Failed to load cat facts: ${error.message}</p>`;
+	}
 }
+
