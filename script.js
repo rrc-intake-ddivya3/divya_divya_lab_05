@@ -20,3 +20,8 @@ async function fetchCatBreeds() {
 	}
 }
 fetchCatBreeds().then((data) => console.log("Breeds data:", data));
+
+// to get the values 
+function getSelectedFactCount() {
+	return document.getElementById("factCount").value;
+}
